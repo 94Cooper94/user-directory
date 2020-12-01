@@ -3,7 +3,7 @@ import "./style.css";
 
 function SearchResults(props) {
   return (
-    <table style={{width:"100%"}}>
+    <table style={{ width: "100%" }}>
       <thead>
         <tr>
           <th>Profile</th>
@@ -11,18 +11,22 @@ function SearchResults(props) {
           <th>Last Name</th>
           <th>Email</th>
         </tr>
-      </thead>  
+      </thead>
 
       <tbody>
-      {props.users.filter(user => (user.firstName === props.search)).map(user => (
-        <tr>
-          <td><img src={user.picture} alt={user.firstName}/></td>          
-          <td>{user.firstName}</td>
-          <td>{user.lastName}</td>
-          <td>{user.email}</td>
-        </tr>
-      ))}
-      </tbody>  
+        {props.users
+          .filter(user => 
+             (user.firstName.toLowerCase().includes(props.search.toLowerCase())))
+          .map(user => (
+            <tr>
+              <td><img src={user.picture} alt={user.firstName} /></td>
+              <td>{user.firstName}</td>
+              <td>{user.lastName}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))
+        }
+      </tbody>
     </table>
   );
 }
