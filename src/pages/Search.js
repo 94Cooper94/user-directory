@@ -8,15 +8,18 @@ import Alert from "../components/Alert";
 class Search extends Component {
   state = {
     search: "",
-    breeds: [],
-    results: [],
+    users: [],
+    // results: [],
     error: ""
   };
 
-  // When the component mounts, get a list of all available base breeds and update this.state.breeds
+  // When the component mounts, get a list of all available base users and update this.state.users
   componentDidMount() {
-    API.getBaseBreedsList()
-      .then(res => this.setState({ breeds: res.data.message }))
+    API.getUserList()
+      .then(res => {
+        console.log(res);
+        this.setState({ users: res.data.data })
+      })
       .catch(err => console.log(err));
   }
 
@@ -24,22 +27,11 @@ class Search extends Component {
     this.setState({ search: event.target.value });
   };
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    API.getDogsOfBreed(this.state.search)
-      .then(res => {
-        if (res.data.status === "error") {
-          throw new Error(res.data.message);
-        }
-        this.setState({ results: res.data.message, error: "" });
-      })
-      .catch(err => this.setState({ error: err.message }));
-  };
   render() {
     return (
       <div>
         <Container style={{ minHeight: "80%" }}>
-          <h1 className="text-center">Search By Breed!</h1>
+          <h1 className="text-center">Search By User!</h1>
           <Alert
             type="danger"
             style={{ opacity: this.state.error ? 1 : 0, marginBottom: 10 }}
@@ -47,11 +39,10 @@ class Search extends Component {
             {this.state.error}
           </Alert>
           <SearchForm
-            handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
-            breeds={this.state.breeds}
+            users={this.state.users}
           />
-          <SearchResults results={this.state.results} />
+          <SearchResults users={this.state.users} search={this.state.search} />
         </Container>
       </div>
     );
@@ -59,3 +50,4 @@ class Search extends Component {
 }
 
 export default Search;
+
