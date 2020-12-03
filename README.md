@@ -12,8 +12,6 @@
 ## Description :book:
   You're tired of trudging through pages upon pages of directory information when all you need is a simple email, or information sorted in a specific pattern. User-directory is here to help! Feel free to search or sort critical information and find results faster than the speed of paint drying. We've utilized a custom state-of-the-art dummy API that generates completely fictional data for your browsing and testing purposes. 
 
-![Example](./public/assets/image/budget_list.PNG)
-
 ## Tests :bar_chart:
 In order to test, clone the repo and in your integrated terminal run "npm install". Ensure that you've installed axios and double check there aren't any other dependencies you might be missing from the package.json. After wrapping up installation, simply type "npm start" and you'll be able to experience the magic first hand on your localhost in your web browser. Enjoy :)
 
