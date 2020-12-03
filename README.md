@@ -1,6 +1,6 @@
 # user-directory :busts_in_silhouette:
 
-![Brand Image](####)
+![Brand Image](./public/search_example.PNG)
 
 ## Table of Contents :file_folder:
 - [Description](#description)
