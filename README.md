@@ -15,10 +15,10 @@
 ![Example](./public/assets/image/budget_list.PNG)
 
 ## Tests :bar_chart:
-Simply follow the link to our deployed app (kudos to Heroku) and experience the magic!
+In order to test, clone the repo and in your integrated terminal run "npm install". Ensure that you've installed axios and double check there aren't any other dependencies you might be missing from the package.json. After wrapping up installation, simply type "npm start" and you'll be able to experience the magic first hand on your localhost in your web browser. Enjoy :)
 
-### :calendar: ########### :runner:
-
+<!-- Simply follow the link to our deployed app (kudos to Heroku) and experience the magic! -->
+<!-- ### :calendar: ########### :runner: -->
 ## Technology :computer:
 
 - Node.js
